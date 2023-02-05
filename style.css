@@ -6,6 +6,7 @@
   text-decoration-color: rgb(255, 0, 0);
   text-decoration-style: solid; /*solid, double, dotted, dashed, wavy */
   text-decoration-thickness: 2px;
+  text-transform: capitalize; /* lowercase, uppercase, capitalize */
 }
 
 .label{
@@ -18,3 +19,10 @@
 /* .root{
   background-color: cyan;
 } */
+
+.paragraph{
+  text-indent: 200px;
+  letter-spacing: 5px;
+  word-spacing: 20px;
+  line-height: 2.5; 
+}
