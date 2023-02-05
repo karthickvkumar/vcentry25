@@ -1,3 +1,20 @@
 .heading{
   color: rgb(0, 17, 255);
+  background-color: aquamarine;
+  text-align: center; /* left, right, center */
+  text-decoration-line: underline; /* overline, line-through, underline */
+  text-decoration-color: rgb(255, 0, 0);
+  text-decoration-style: solid; /*solid, double, dotted, dashed, wavy */
+  text-decoration-thickness: 2px;
 }
+
+.label{
+  background-color: rgb(252, 0, 0);
+  text-align: center;
+  text-decoration: underline black wavy 2px;
+}
+
+/* This css is used to add background color for body */
+/* .root{
+  background-color: cyan;
+} */
