@@ -26,3 +26,9 @@
   word-spacing: 20px;
   line-height: 2.5; 
 }
+
+.box{
+  height: 200px;
+  background-color: #f44336;
+  width: 400px;
+}
