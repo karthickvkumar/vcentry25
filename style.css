@@ -28,7 +28,24 @@
 }
 
 .box{
+  width: 500px;
   height: 200px;
-  background-color: #f44336;
-  width: 400px;
+  background-color: chocolate;
+}
+
+.rectangle{
+  width: 50vw;
+  height: 50vh;
+  background-color: blueviolet;
+}
+
+.percent{
+  width: 50%;
+  height: 50%;
+  background-color: black;
+  overflow: auto; /*visible, hidden, scroll, auto */
+}
+
+.white{
+  color: white;
 }
