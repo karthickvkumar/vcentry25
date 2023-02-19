@@ -25,6 +25,8 @@
   letter-spacing: 5px;
   word-spacing: 20px;
   line-height: 2.5; 
+  font-size: 24px;
+  font-family: 'Dancing Script', cursive;
 }
 
 .box{
@@ -48,4 +50,35 @@
 
 .white{
   color: white;
+}
+
+.heading-border{
+  /* border-style: solid;
+    border-width: 2px;
+    color: blue;
+    border-color: red; */
+    border-radius: 24px;
+    border: 3px solid red;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.different-border{
+  border-left-style: double;
+  border-top-style: dashed;
+  border-top-width: 7px;
+  border-left-color: red;
+}
+
+.square{
+  width: 100px;
+  height: 100px;
+  border-style: solid;
+  border-color: blue;
+  border-radius: 65px;
+}
+
+.icon-color{
+  color: red;
+  font-size: 30px;
 }
