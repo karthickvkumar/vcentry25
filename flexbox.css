@@ -1,0 +1,64 @@
+
+/*
+Flex Direction - Row, Row-Reverse
+Justify Content --> Align in Row Direction (X-Axies)
+Align Items --> Align in Colum Direction (Y-Axis)
+
+Flex Direction - Column, Column-Reverse
+Justify Content --> Align in Column Direction (Y-Axies)
+Align Items --> Align in Row Direction (X-Axis)
+*/
+
+
+/*  Properties for Parent */
+.container-1{
+  height: 500px;
+  border: 3px solid;
+  display: flex;
+  flex-direction: row;  /* row, row-revers, column, column-reverse */
+  flex-wrap: wrap; /*wrap, wrap-reverse, nowrap */
+  justify-content: center; /*flex-start , flex-end , center , space-between , space-around , space-evenly */
+  align-items: center; /*flex-start, flex-end, center */
+}
+
+.box{
+  width: 150px;
+  height: 150px;
+  border: 3px solid red;
+}
+
+/* Properties for the Children  */
+
+.one{
+  order: 4;
+}
+
+.two{
+  order: 3;
+  align-self: flex-end;
+}
+
+.three{
+  order: 2;
+}
+
+.four{
+  order: 1;
+}
+
+.main{
+  background-color: aquamarine;
+}
+
+@media only screen and (min-width : 0px) and (max-width : 400px){
+  .main{
+    background-color: cornflowerblue;
+  }
+}
+
+
+@media only screen and (min-width : 401px) and (max-width : 798px){
+  .main{
+    background-color:chocolate 
+  }
+}
