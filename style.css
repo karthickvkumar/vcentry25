@@ -82,3 +82,13 @@
   color: red;
   font-size: 30px;
 }
+
+.table-outline{
+  border: 2px solid red;
+  border-collapse: collapse;
+}
+
+.table-heading{
+  background-color: #f44336;
+  color: white;
+}
