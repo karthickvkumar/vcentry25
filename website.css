@@ -1,0 +1,55 @@
+.main-body{
+  margin: 0px;
+}
+
+.overall-container{
+  border: 2px solid red;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.heading-container{
+  border: 2px solid red;
+  height: 35%;
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.text-container{
+  border: 2px solid red;
+  height: 20%;
+  margin: 15px;
+}
+
+.image-container{
+  border: 2px solid red;
+  height: 35%;
+  margin: 15px;
+}
+
+.heading-image{
+  border: 2px solid blue;
+    height: 100%;
+    width: 25%;
+    box-sizing: border-box;
+}
+
+.heading-section{
+  border: 2px solid blue;
+  height: 100%;
+  width: 75%;
+  box-sizing: border-box;
+}
+
+.topic-section{
+  border: 2px solid red;
+    height: 40%;
+    box-sizing: border-box;
+}
+
+.paragraph-section{
+  border: 2px solid red;
+  height: 60%;
+  box-sizing: border-box;
+}
