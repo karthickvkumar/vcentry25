@@ -26,6 +26,9 @@
   border: 2px solid red;
   height: 35%;
   margin: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .heading-image{
@@ -46,10 +49,62 @@
   border: 2px solid red;
     height: 40%;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
 }
 
 .paragraph-section{
   border: 2px solid red;
   height: 60%;
   box-sizing: border-box;
+}
+
+.circle-image{
+  border: 2px solid;
+    width: 10%;
+}
+
+.header-info{
+  border: 2px solid;
+  width: 75%;
+}
+
+.date-info{
+  border: 2px solid;
+    width: 15%;
+}
+
+.main-header-info{
+  border: 2px solid red;
+  height: 50%;
+  box-sizing: border-box;
+}
+
+.sub-header-info{
+  border: 2px solid red;
+  height: 50%;
+  box-sizing: border-box;
+}
+
+.section-image{
+  border: 2px solid blue;
+  width: 25%;
+}
+
+.banner-image{
+  border: 2px solid red;
+    height: 60%;
+    box-sizing: border-box;
+}
+
+.banner-heading{
+  border: 2px solid red;
+  height: 20%;
+  box-sizing: border-box;
+}
+
+.banner-sub-heading{
+  box-sizing: border-box;
+  border: 2px solid red;
+  height: 20%;
 }
