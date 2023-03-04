@@ -126,4 +126,33 @@
   .overall-container{
     border: none;
   }
+
+  .heading-container{
+    height: 80vh;
+    flex-direction: column;
+  }
+
+  .heading-image{
+    width: 100%;
+  }
+
+  .heading-section{
+    width: 100%;
+  }
+
+  .date-info{
+    width: 25%;
+  }
+
+  .paragraph-section{
+    height: 50%;
+  }
+
+  .topic-section{
+    height: 50%;
+  }
+
+  .circle-image{
+    width: 25%;
+  }
 }
