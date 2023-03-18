@@ -151,3 +151,120 @@ function checkVoitingEligibility(){
     alert("The given user age is NOT eligible for Vote");
   }
 }
+
+/*Syntax of Multiple If Else Condition 
+if(condition){
+
+}
+else if(condition){
+
+}
+else{
+
+}
+
+Problem Statement:
+Find whether a given user age belong which Age Category 
+1. Minor - User age less then 18
+2. Major - User age greater than or equal to 18 and less than 60
+3. Senior - User age greater then 60
+*/
+
+function checkAgeCategory(){
+  var age = prompt("Enter User Age");
+  if(age < 18){
+    alert("The user age belong to Minor Category");
+  }
+  else if(age >= 18 && age < 60){
+    alert("The user age belong to Major Category");
+  }
+  else{
+    alert("The user age belong to Senior");
+  }
+}
+
+/*Syntax for Loop
+
+for(initialization; condition; increment/decrement operator){
+  code 
+}
+
+initialization - To deaclare a variable with Loop Starting number 
+condition - Comparison operator to check the Loop count 
+increment/decrement operator - To increase the loop count 
+*/
+
+for(var count = 1; count <= 20; count++){
+  console.log(count);
+}
+
+/*
+Problem Statement:
+To find all the even numbers for the given N number of Limit 
+1. To pass End number as Input 
+2. To print all the even number from 1 to End number 
+3. Number % 2 === 0 --> Even number 
+*/
+
+function findEvenNumbers(){
+  var endNumber = prompt("Enter a Number");
+  for(var count = 1; count <= endNumber; count++){
+    if(count % 2 === 0){
+      console.log(count, "is a Even Number");
+    }
+  }
+}
+
+
+/*Syntax Switch Case 
+switch(expression){
+  case value :
+    code block
+    break;
+
+  case value :
+    code block
+    break;
+
+  default:
+    code block
+}*/
+
+/*
+Problem Statement
+To perfom Calculator Basic Arithmetic Operation 
+3 Input -> Number1, Number2, Operator
+*/
+
+function performCalculation(){
+  var firstNumber = prompt("Enter First Number");
+  var secondNumber = prompt("Enter Second Number");
+  var operator = prompt("Enter your Operator");
+  var result; 
+
+  switch(operator){
+    case "+":
+      result = firstNumber + secondNumber;
+      console.log("The addition of 2 number is", result);
+
+      break;
+    case "-":
+      result = firstNumber - secondNumber;
+      console.log("The subraction of 2 number is", result);
+
+      break;
+    case "*":
+      result = firstNumber * secondNumber;
+      console.log("The multiply of 2 number is", result);
+
+      break;
+    case "/":
+      result = firstNumber / secondNumber;
+      console.log("The division of 2 number is", result);
+
+      break;
+    default:
+      console.log("Please enter only basic arthihmetic operator");
+  }
+
+}
