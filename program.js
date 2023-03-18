@@ -237,34 +237,41 @@ To perfom Calculator Basic Arithmetic Operation
 */
 
 function performCalculation(){
-  var firstNumber = prompt("Enter First Number");
-  var secondNumber = prompt("Enter Second Number");
-  var operator = prompt("Enter your Operator");
-  var result; 
+  try{
+    var firstNumber = prompt("Enter First Number");
+    var secondNumber = prompt("Enter Second Number");
+    var operator = prompt("Enter your Operator");
+    var result; 
 
-  switch(operator){
-    case "+":
-      result = firstNumber + secondNumber;
-      console.log("The addition of 2 number is", result);
+    switch(operator){
+      case "+":
+        result = parseInt(firstNumber) + parseInt(secondNumber);
+        alert("The addition of 2 number is " + result);
 
-      break;
-    case "-":
-      result = firstNumber - secondNumber;
-      console.log("The subraction of 2 number is", result);
+        break;
+      case "-":
+        result = firstNumber - secondNumber;
+        alert("The subraction of 2 number is " + result);
 
-      break;
-    case "*":
-      result = firstNumber * secondNumber;
-      console.log("The multiply of 2 number is", result);
+        break;
+      case "*":
+        result = firstNumber * secondNumber;
+        alert("The multiply of 2 number is " + result);
 
-      break;
-    case "/":
-      result = firstNumber / secondNumber;
-      console.log("The division of 2 number is", result);
+        break;
+      case "/":
+        result = firstNumber / secondNumber;
+        alert("The division of 2 number is " + result);
 
-      break;
-    default:
-      console.log("Please enter only basic arthihmetic operator");
+        break;
+      default:
+        alert("Please enter only basic arthihmetic operator");
+    }
   }
+  catch(error){
+    console.error(error);
+    alert("Something went wrong, pls try again later");
+  }
+  
 
 }
