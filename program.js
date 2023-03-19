@@ -88,13 +88,19 @@ console.log(nameList);
 console.log(studentInfoList);
 
 /*Function -> It is Block of Code 
-syntax 
+syntax - Function Definitation
 function functionName(){
   we should code inside here
 }
 function -> JavaScript keyword
 functionName -> Same as variable_name
 */
+/*
+To run a Function 
+syntax - Function Invocation / Function Call 
+function_name();
+*/
+
 
 function printWelcomeMessage(){
   var message = "Good Evening Everyone!";
@@ -300,7 +306,9 @@ function printObject(){
   console.log(user);
 }
 
-function printArray(){
+function printArray(message){  // Arguments 
+  alert(message);
+
   var nameList = ["Arun", "Chanrdu", "Karthik", "Abishek", "Ajith", "Yuvaraj"];
 
   // 1. To print the Array value Count 
@@ -340,6 +348,29 @@ function printArray(){
   var indexValue = nameList.indexOf("Karthik");
   nameList.splice(indexValue, 1);
 
-  console.log(nameList);
+  // 4. To Edit an existing Value in an Array
+  // syntax - array_variable_name[index] = new value;
 
+  var indexNumber = nameList.indexOf("Yuvaraj");
+  nameList[indexNumber] = "Ashly";
+
+  console.log(nameList);
 }
+
+function callBackFunction(){
+  var message = "Going to Trigger Array";
+  printArray(message);  // Parameter 
+}
+
+
+function ArrayForEach(){
+  //syntax - array_variable_name.forEach
+}
+
+/*
+Naming Convention 
+1. Pascel Case - KarthickKumar (To define Class name & Compoment name)
+2. Camel Case - karthickKumar (To define Function & Variable name)
+3. Kebab Case - karthick-kumar (To define HTML Attribute & CSS Class name)
+4. Snake Case - karthick_kumar (To define Function & Variable name)
+*/
