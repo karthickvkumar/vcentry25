@@ -27,6 +27,7 @@ console.log("Good Evening!");  // text message
 console.log(emailId); // varaible
 
 
+
 // Null - Non Exisit Value
 
 // Undefined - A variable has been created but it does not have value 
@@ -272,6 +273,73 @@ function performCalculation(){
     console.error(error);
     alert("Something went wrong, pls try again later");
   }
+
+}
+
+function printObject(){
+  var user = {
+    firstName : "Mr.abc",
+    lastName : "xyz",
+    age: 25,
+    location: "Chennai"
+  };
+
+  // 1. To read a value from an Object
+  // syntax - object_variable_name.key;
+  console.log(user.firstName, user.lastName);
+
+  // 2. To edit a value in an Object 
+  // syntax - object_variable_name.key = new Value;
+  user.firstName = "shinchan";
+  user.lastName = "Nohara";
+
+  // 3. To Remove a value from an Object 
+  // syntax - delete object_variable_name.key;
+  delete user.location;
+
+  console.log(user);
+}
+
+function printArray(){
+  var nameList = ["Arun", "Chanrdu", "Karthik", "Abishek", "Ajith", "Yuvaraj"];
+
+  // 1. To print the Array value Count 
+  // syntax - array_variable_name.length; 
+  console.log(nameList.length);
+
+  // 2. To insert New Value into an Array 
+  // a) To insert new value into Last of Array Record
+  // syntax -  array_variable_name.push(value)
+  nameList.push("Ashly");
+
+  // b) To insert new value at the Top of the Array Record 
+  // syntax - array_variable_name.unshift(value);
+  nameList.unshift("Zyan");
   
+  // To find Index number of a particular Array record 
+  // syntax - array_variable_name.indexOf(value);
+  var indexCount = nameList.indexOf("Chanrdu");
+  console.log(indexCount);
+
+  // c) To insert new value at Particular position in Array record 
+  // syntax - array_variable_name.splice(index, 0, value);
+  nameList.splice(indexCount, 0, "Shinchan");
+
+  // 3. To Remove Value from Array
+  //a) To Remove value Last of the Array Record 
+  // syntax - array_variable_name.pop();
+  nameList.pop();
+
+  // b) To Remove value from First of the Array Record 
+  // syntax - array_variable_name.shift()
+  nameList.shift();
+
+  // c) To remove Particular value from the Array Record 
+  // syntax - array_variable_name.splice(index, 1);
+  // To find index value
+  var indexValue = nameList.indexOf("Karthik");
+  nameList.splice(indexValue, 1);
+
+  console.log(nameList);
 
 }
