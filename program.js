@@ -439,6 +439,9 @@ setTimeout(function(){
   code 
 }, timeMillisecond); 
 1000ms - 1s
+
+To stop a Set Time Out 
+clearTimeout(timeId)
 */
 
 function delayMessage(){
@@ -447,3 +450,65 @@ function delayMessage(){
     alert(text);
   }, 1000 * 10);
 }
+
+/*
+Set Interval - To run code on a certain given Time interval again and again 
+syntax 
+setInterval(function(){
+  code
+}, timeMillisecond); 
+1000ms - 1s
+
+
+To stop a Time Interval 
+clearInterval(timerId);
+*/
+var intervalID;
+
+function delayMessageAtInterval(){
+  intervalID = setInterval(function(){
+   alert("I will be calling every 5 seconds"); 
+  }, 1000 * 5);
+}
+
+function stopTimeInterval(){
+  clearInterval(intervalID);
+}
+
+/*
+Storage - max size 13mb 
+1. Local Storage - Permanent Storage 
+2. Session Storage - Temporay Storage 
+
+Local Stoage: Add, Read, Edit, Delete 
+
+To add new value to Local Storage 
+syntax 
+localStorage.setItem("key", "value");
+*/
+
+localStorage.setItem("user-email", "test@gmail.com");
+localStorage.setItem("user-phone", 8794551552);
+
+/*
+To read value from Local Storage 
+localStorage.getItem("key");
+*/
+var value = localStorage.getItem("user-email");
+
+/*
+To edit existing value to Local Storage 
+syntax 
+localStorage.setItem("key", "new value");
+*/
+localStorage.setItem("user-email", "demo@demo.in");
+
+/*
+Delete
+1. To delete particular value in Local Storage
+localStorage.removeItem("key");
+*/
+localStorage.removeItem("user-phone");
+
+// 2. To delete entire Local Storge 
+localStorage.clear();
