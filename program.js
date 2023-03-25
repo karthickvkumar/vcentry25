@@ -362,10 +362,66 @@ function callBackFunction(){
   printArray(message);  // Parameter 
 }
 
+/*
+Scope - To define a variable accebility 
+Three types of Scopes 
+1. Local Scope - A variable which will be declared inside a Function  
+2. Global Scope - A vaiable which will be declared ouside of a Function
+3. Automatic Global Scope - A variable will be declared Outside of a Function   and its value will be assinged inside a Function
+*/
+var textMessage;
 
-function ArrayForEach(){
-  //syntax - array_variable_name.forEach
+var information = "Good Evening!"; // global scope
+
+function printWelecome(){
+
+  textMessage = prompt("Type anything"); //automatic global (global scope)
+
+  var message = "Good Afternoon!"; //local scope
+  alert(message);
+  // alert(information);
+  //printGreeting(message); // parameter
 }
+
+function printGreeting(message){ //argument
+  alert(message);
+  // alert(information);
+}
+
+function printTextMessage(){
+  alert(textMessage);
+}
+
+/*
+Different Types of Functions 
+1. Global Function 
+syntax 
+function functionName(){
+
+}
+
+functionName();
+
+2. Local Function 
+var functionName = function(){
+
+}
+functionName();
+
+functionName = null;
+
+3. Callback Function or Anonymous Function 
+function(){
+
+}
+
+4. IIFE - Immediately Invoked Function Expression 
+(function(){
+  alert("You have won Prize");
+})();
+*/
+
+// Array Iteration Methods - forEach, Map, Filter 
 
 /*
 Naming Convention 
@@ -374,3 +430,20 @@ Naming Convention
 3. Kebab Case - karthick-kumar (To define HTML Attribute & CSS Class name)
 4. Snake Case - karthick_kumar (To define Function & Variable name)
 */
+
+/*
+Timers
+Set Timeout - To run code after given Time duration
+syntax 
+setTimeout(function(){
+  code 
+}, timeMillisecond); 
+1000ms - 1s
+*/
+
+function delayMessage(){
+  setTimeout(function(){
+    var text = "Its working after 10 seconds";
+    alert(text);
+  }, 1000 * 10);
+}
