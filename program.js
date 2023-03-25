@@ -508,7 +508,41 @@ Delete
 1. To delete particular value in Local Storage
 localStorage.removeItem("key");
 */
-localStorage.removeItem("user-phone");
+// localStorage.removeItem("user-phone");
 
 // 2. To delete entire Local Storge 
-localStorage.clear();
+// localStorage.clear();
+
+/*
+Session Stoage: Add, Read, Edit, Delete 
+
+To add new value to session Storage 
+syntax 
+sessionStorage.setItem("key", "value");
+*/
+
+// sessionStorage.setItem("user-email", "test@gmail.com");
+// sessionStorage.setItem("user-phone", 8794551552);
+
+/*
+To read value from Local Storage 
+sessionStorage.getItem("key");
+*/
+var value = sessionStorage.getItem("user-email");
+
+/*
+To edit existing value to Local Storage 
+syntax 
+sessionStorage.setItem("key", "new value");
+*/
+sessionStorage.setItem("user-email", "demo@demo.in");
+
+/*
+Delete
+1. To delete particular value in Local Storage
+sessionStorage.removeItem("key");
+*/
+sessionStorage.removeItem("user-phone");
+
+// 2. To delete entire Local Storge 
+// sessionStorage.clear();
