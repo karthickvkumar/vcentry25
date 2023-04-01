@@ -1,0 +1,16 @@
+HTML :
+
+https://www.thatjsdude.com/interview/html.html
+https://github.com/learning-zone/html-basics
+https://github.com/Devinterview-io/html5-interview-questions
+
+CSS :
+
+https://www.thatjsdude.com/interview/css.html
+https://github.com/Devinterview-io/css-interview-questions
+
+JavaScript : 
+
+https://www.thatjsdude.com/interview/js2.html
+https://github.com/Devinterview-io/javascript-interview-questions
+
