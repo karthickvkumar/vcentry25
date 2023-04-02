@@ -1,21 +1,21 @@
 import React from "react";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+
+import LoginScreen from "./screens/login";
+import RegisterScreen from "./screens/register";
+import HomeScreen from "./screens/home";
 
 import "./css/style.css";
 
 const App = () => {
-
-  const userName = "Karthick Kumar";
-  
-  const buttonClick = () => {
-    alert("Button has been clicked");
-  }
-
   return(
-    <div>
-      <h1 className="heading">Welcome to ES6 {userName}</h1>
-      <h1>{userName}</h1>
-      <button onClick={() => buttonClick() }>Trigger Function</button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="login" element={<LoginScreen></LoginScreen>}></Route>
+        <Route path="registration" element={<RegisterScreen></RegisterScreen>}></Route>
+        <Route path="home" element={<HomeScreen></HomeScreen>}></Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
