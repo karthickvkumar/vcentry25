@@ -9,6 +9,7 @@ const HomeScreen = () => {
       <HeaderComponent></HeaderComponent>
       <div className="content">
         <h1>Home Screen</h1>
+        <img src={require("../images/shinchu.jpg")} className="image"/>
       </div>
       <FooterComponent></FooterComponent>
     </div>

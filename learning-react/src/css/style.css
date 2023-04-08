@@ -47,3 +47,7 @@ body{
   text-decoration: none;
   font-weight: bolder;
 }
+
+.image{
+  width: 400px;
+}
