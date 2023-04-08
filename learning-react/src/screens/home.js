@@ -1,26 +1,16 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
+
+import HeaderComponent from "../components/header";
+import FooterComponent from "../components/footer";
 
 const HomeScreen = () => {
   return(
     <div>
-      <div className="header">
-        <div className="logo">
-
-        </div>
-        <div className="screens-link">
-          <NavLink to="/home" className="link">Home</NavLink>
-          <NavLink to="/about" className="link">About</NavLink>
-          <NavLink to="/contact-us" className="link">Contact</NavLink>
-          <NavLink to="/settings" className="link">Settings</NavLink>
-        </div>
-      </div>
+      <HeaderComponent></HeaderComponent>
       <div className="content">
         <h1>Home Screen</h1>
       </div>
-      <div className="footer">
-
-      </div>
+      <FooterComponent></FooterComponent>
     </div>
   )
 }
