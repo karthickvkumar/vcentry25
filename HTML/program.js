@@ -415,6 +415,10 @@ function(){
 
 }
 
+() => {
+  
+}
+
 4. IIFE - Immediately Invoked Function Expression 
 (function(){
   alert("You have won Prize");
