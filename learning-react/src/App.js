@@ -9,6 +9,10 @@ import ContactScreen from "./screens/contact";
 import AboutScreen from "./screens/about";
 import SettingsScreen from "./screens/settings";
 
+import ActivityScreen from "./screens/activity";
+import ProfileInformationScreen from "./screens/profile-info";
+import PrivacySceeen from "./screens/privacy";
+
 import "./css/style.css";
 
 const App = () => {
@@ -22,7 +26,11 @@ const App = () => {
 
         <Route path="contact-us" element={<ContactScreen></ContactScreen>}></Route>
         <Route path="about" element={<AboutScreen></AboutScreen>}></Route>
-        <Route path="settings" element={<SettingsScreen></SettingsScreen>}></Route>
+        <Route path="settings" element={<SettingsScreen></SettingsScreen>}>
+          <Route path="activity" element={<ActivityScreen></ActivityScreen>}></Route>
+          <Route path="profile" element={<ProfileInformationScreen></ProfileInformationScreen>}></Route>
+          <Route path="privacy" element={<PrivacySceeen></PrivacySceeen>}></Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   )

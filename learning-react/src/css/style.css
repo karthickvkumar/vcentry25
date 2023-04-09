@@ -56,3 +56,27 @@ body{
   color: red;
   text-shadow: 3px 3px 4px gray;
 }
+
+.wrapper{
+  height: 86%;
+    border: 3px solid blue;
+    display: flex;
+}
+
+.sidebar{
+  border: 3px solid blue;
+  width: 20%;
+}
+
+.sub-content{
+  border: 3px solid blue;
+  width: 80%;
+}
+
+.sidebar-link{
+  height: 15%;
+  border: 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
