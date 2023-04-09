@@ -51,3 +51,8 @@ body{
 .image{
   width: 400px;
 }
+
+.hightlight-link{
+  color: red;
+  text-shadow: 3px 3px 4px gray;
+}
