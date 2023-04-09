@@ -12,6 +12,7 @@ const HeaderComponent = () => {
         <NavLink to="/about" className="link">About</NavLink>
         <NavLink to="/contact-us" className="link">Contact</NavLink>
         <NavLink to="/settings" className="link">Settings</NavLink>
+        <NavLink to="/login" className="link">Login</NavLink>
       </div>
     </div>
   )
