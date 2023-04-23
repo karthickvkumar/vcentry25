@@ -13,6 +13,8 @@ import ActivityScreen from "./screens/activity";
 import ProfileInformationScreen from "./screens/profile-info";
 import PrivacySceeen from "./screens/privacy";
 
+import PageNotFoundScreen from "./screens/page-not-found";
+
 import "./css/style.css";
 
 const App = () => {
@@ -31,6 +33,9 @@ const App = () => {
           <Route path="profile" element={<ProfileInformationScreen></ProfileInformationScreen>}></Route>
           <Route path="privacy" element={<PrivacySceeen></PrivacySceeen>}></Route>
         </Route>
+
+
+        <Route path="*" element={<PageNotFoundScreen></PageNotFoundScreen>}></Route>
       </Routes>
     </BrowserRouter>
   )
