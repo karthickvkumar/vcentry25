@@ -1,5 +1,5 @@
 // Step 1: To import useState method from React
-import React, {useState} from "react";
+import React, {useState} from "react"; // React Hooks
 import HeaderComponent from "../components/header";
 import FooterComponent from "../components/footer";
 

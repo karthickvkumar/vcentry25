@@ -1,28 +1,60 @@
-import React from "react";
-import {NavLink, useNavigate} from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import HeaderComponent from "../components/header";
 import FooterComponent from "../components/footer";
 
 const LoginScreen = () => {
-
   const navigate = useNavigate();
+
+  const [loginForm, SubmitLogin] = useState({
+    emailId : "",
+    password : ""
+  });
 
   const goToHomeScreen = () => {
     navigate("/home");
+  };
+
+  const captureEmailInput = (event) => {
+    // console.log(event.target.value);
+    // loginForm.emailId = event.target.value;
+    SubmitLogin({...loginForm, emailId : event.target.value});
   }
   
-  return(
+  const capturePasswordInput = (event) => {
+    // console.log(event.target.value);
+    SubmitLogin({...loginForm, password : event.target.value});
+  }
+
+  const loginAction = () => {
+    console.log(loginForm);
+  }
+
+  return (
     <div>
       <HeaderComponent></HeaderComponent>
       <div className="content">
         <h1>Login Screen</h1>
+        <div>
+          <label>Enter your Email ID</label>
+          <input type="text" placeholder="Enter email Id" onChange={captureEmailInput} />
+        </div>
+        <div>
+          <label>Enter your Password</label>
+          <input type="password" placeholder="Enter Password" onChange={capturePasswordInput}/>
+        </div>
+        <div>
+          <button onClick={() => loginAction()}>Login</button>
+        </div>
+
         <NavLink to="/">Go to landing screen</NavLink>
-        <br/>
-        <button onClick={() => goToHomeScreen() }>Go to Home page</button>
+        <br />
+        <button onClick={() => goToHomeScreen()}>Go to Home page</button>
+        <h1>{loginForm.emailId}, {loginForm.password}</h1>
       </div>
       <FooterComponent></FooterComponent>
     </div>
-  )
-}
+  );
+};
 
 export default LoginScreen;
