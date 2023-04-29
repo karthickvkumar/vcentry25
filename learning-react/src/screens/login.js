@@ -15,15 +15,21 @@ const LoginScreen = () => {
     navigate("/home");
   };
 
-  const captureEmailInput = (event) => {
-    // console.log(event.target.value);
-    // loginForm.emailId = event.target.value;
-    SubmitLogin({...loginForm, emailId : event.target.value});
-  }
+  // const captureEmailInput = (event) => {
+  //   // console.log(event.target.value);
+  //   // loginForm.emailId = event.target.value;
+  //   SubmitLogin({...loginForm, emailId : event.target.value});
+  // }
   
-  const capturePasswordInput = (event) => {
-    // console.log(event.target.value);
-    SubmitLogin({...loginForm, password : event.target.value});
+  // const capturePasswordInput = (event) => {
+  //   // console.log(event.target.value);
+  //   SubmitLogin({...loginForm, password : event.target.value});
+  // }
+
+  const handleInputField = (event) => {
+    console.log(event.target.value, event.target.name);
+
+    SubmitLogin({...loginForm, [event.target.name] : event.target.value });
   }
 
   const loginAction = () => {
@@ -37,11 +43,11 @@ const LoginScreen = () => {
         <h1>Login Screen</h1>
         <div>
           <label>Enter your Email ID</label>
-          <input type="text" placeholder="Enter email Id" onChange={captureEmailInput} />
+          <input type="text" placeholder="Enter email Id" onChange={handleInputField} name="emailId" />
         </div>
         <div>
           <label>Enter your Password</label>
-          <input type="password" placeholder="Enter Password" onChange={capturePasswordInput}/>
+          <input type="password" placeholder="Enter Password" onChange={handleInputField} name="password"/>
         </div>
         <div>
           <button onClick={() => loginAction()}>Login</button>
