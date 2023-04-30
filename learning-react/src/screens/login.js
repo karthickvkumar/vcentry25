@@ -27,7 +27,7 @@ const LoginScreen = () => {
   // }
 
   const handleInputField = (event) => {
-    console.log(event.target.value, event.target.name);
+    // console.log(event.target.value, event.target.name);
 
     SubmitLogin({...loginForm, [event.target.name] : event.target.value });
   }
