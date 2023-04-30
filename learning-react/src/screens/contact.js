@@ -18,7 +18,15 @@ const ContactScreen = () => {
   const handleInputField = (event) => {
     //console.log(event.target.value)
     if(event.target.name === "hobbies"){
-      registerForm.hobbies.push(event.target.value);
+      
+      if(event.target.checked){
+        registerForm.hobbies.push(event.target.value);
+      }
+      else{
+        const indexValue = registerForm.hobbies.indexOf(event.target.value);
+        registerForm.hobbies.splice(indexValue, 1);
+      }
+
     }
     else{
       UpdateRegisterForm({...registerForm, [event.target.name] : event.target.value })
