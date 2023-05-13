@@ -96,5 +96,13 @@ body{
 }
 
 .space-top{
-  margin-top: 25px;
+  margin-top: 15px;
+}
+
+.error-text{
+  color: red;
+}
+
+.error-input{
+  border-color: red;
 }
