@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import HeaderComponent from "../components/header";
 import FooterComponent from "../components/footer";
+import axios from "axios";
 
 const LoginScreen = () => {
   const navigate = useNavigate();
 
   const [loginForm, SubmitLogin] = useState({
-    emailId : "",
+    email : "",
     password : ""
   });
 
@@ -34,6 +35,15 @@ const LoginScreen = () => {
 
   const loginAction = () => {
     console.log(loginForm);
+    const url = "https://reqres.in/api/login";
+
+    axios.post(url, loginForm)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }
 
   return (
@@ -43,7 +53,7 @@ const LoginScreen = () => {
         <h1>Login Screen</h1>
         <div>
           <label>Enter your Email ID</label>
-          <input type="text" placeholder="Enter email Id" onChange={handleInputField} name="emailId" />
+          <input type="text" placeholder="Enter email Id" onChange={handleInputField} name="email" />
         </div>
         <div>
           <label>Enter your Password</label>
