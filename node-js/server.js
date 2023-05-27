@@ -30,9 +30,20 @@ connection.connect((error) => {
   }
 })
 
-// http://localhost:4000/status
-app.get("/status", (request, response)=> {
-  response.status(200).send("REST API is working fine !! Good Day");
+// http://localhost:4000/listusers
+app.get("/listusers", (request, response)=> {
+  
+  const sqlQuery = `select * from Users`;
+
+  connection.query(sqlQuery, (error, result) => {
+    if(error){
+      response.status(500).send(error);
+    }
+    else{
+      response.status(200).send(result);
+    }
+  })
+
 });
 
 // http://localhost:4000/addusers

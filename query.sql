@@ -41,3 +41,11 @@ select * from Users;
 
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Test@123';
 flush privileges;
+
+
+
+
+-- Status Code 
+-- 2X - 200, 201, 203 (Success response)
+-- 4X - 400, 401, 404 (Client Side error)
+-- 5X - 500, 501, 502 (Server Side error)
