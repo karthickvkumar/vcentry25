@@ -1,0 +1,8 @@
+MySQL Deployment 
+https://www.db4free.net/
+
+Node JS Deployment
+https://render.com/
+
+React JS Deployment
+https://www.netlify.com/
