@@ -33,7 +33,7 @@ const HomeScreen = () => {
 
   const submitUsername = () => {
     console.log(form);
-    const url = "http://localhost:4000/submit";
+    const url = "http://localhost:4000/addusers";
 
     axios.post(url, form)
       .then((response) => {

@@ -38,8 +38,18 @@ app.get("/status", (request, response)=> {
 // http://localhost:4000/addusers
 app.post("/addusers", (request, response) => {
   const data = request.body;
-  console.log(data);
-  response.status(200).send("Value has been received from React JS");
+  console.log(data.username);
+
+  const sqlQuery = `insert into Users (username) values ('${data.username}')`;
+
+  connection.query(sqlQuery, (error, result) => {
+    if(error){
+      response.status(500).send(error);
+    }
+    else{
+      response.status(200).send(result);
+    }
+  })
 })
 
 

@@ -34,3 +34,10 @@ insert into Users (username) values ('Ajith');
 use learning_nodejs;
 
 select * from Users;
+
+
+==================================
+-- Authentication ERROR
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Test@123';
+flush privileges;
