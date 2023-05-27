@@ -11,3 +11,26 @@ create table login_page (email varchar(255), password varchar(255));
 use online_shopping;
 
 insert into login_page (email, password) values ('yuvi@gmail.com', 'user@123');
+
+================================
+
+show databases;
+
+==============================
+
+use learning_nodejs;
+
+create table Users (username varchar(255));
+
+===========================
+
+use learning_nodejs;
+
+insert into Users (username) values ('Ajith');
+
+
+===========================
+
+use learning_nodejs;
+
+select * from Users;
