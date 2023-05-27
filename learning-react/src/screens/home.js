@@ -45,6 +45,12 @@ const HomeScreen = () => {
       });
   };
 
+  const deleteUser = (index) => {
+    usersList.splice(index, 1);
+
+    updateUsersList([...usersList]);
+  }
+
   return (
     <div>
       <HeaderComponent></HeaderComponent>
@@ -69,7 +75,7 @@ const HomeScreen = () => {
             {
               usersList.map((value, index) => {
                 return(
-                  <li key={index}>{value.username}</li>
+                  <li key={index}>{value.username}   <button onClick={() => deleteUser(index)}>X</button></li>
                 )
               })
             }
