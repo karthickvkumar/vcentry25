@@ -133,3 +133,12 @@ body{
   background-color: #04AA6D;
   color: white;
 }
+
+.outline{
+  border: 2px solid;
+  border-collapse: collapse;
+}
+
+.box{
+  width: 100px;
+}

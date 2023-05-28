@@ -9,6 +9,10 @@ const StudentList = () => {
     age : ""
   });
 
+  const [studentListData, updateStudentListData] = useState([]);
+
+  const [selectedStudentID, updateSelectedStudentID] = useState(null);
+
   const onHandleInput = (event) => {
     UpdateStudentForm({...studentForm, [event.target.name] : event.target.value });
   }
@@ -34,11 +38,20 @@ const StudentList = () => {
     axios.get(url)
       .then((response) => {
         const result = response.data;
-        console.log(result);
+        updateStudentListData(result);
       })
       .catch((error) => {
         console.log(error);
       })
+  }
+
+  const discardEditProfile = () => {
+    updateSelectedStudentID(null);
+  }
+
+  const EditStudentProfile = (value) => {
+    console.log(value);
+    updateSelectedStudentID(value.id);
   }
 
   return (
@@ -57,6 +70,59 @@ const StudentList = () => {
         <button onClick={() => submitStudentProfile() }>Submit Student Profile</button>
         
         <button onClick={() => listStudentProfile() }>Load Student Profile</button>
+        <table className='outline'>
+          <thead>
+            <tr>
+              <th className='outline'>First Name</th>
+              <th className='outline'>Last Name</th>
+              <th className='outline'>Age</th>
+              <th className='outline'>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+              {
+                studentListData.map((value, index) => {
+                  return(
+                    <tr key={index}>
+                      <td className='outline'>
+                       
+                       {
+                        selectedStudentID == value.id ?
+                          <input type="text" className='box' value={value.firstName} />
+                          :
+                          <span>{value.firstName}</span>
+                       }
+                       
+                      </td>
+                      <td className='outline'>
+                        
+                      {
+                        selectedStudentID == value.id ?
+                          <input type="text" className='box' value={value.lastName} />
+                          :
+                          <span>{value.lastName}</span>
+                       }
+
+                      </td>
+                      <td className='outline'>
+                        
+                        {
+                          selectedStudentID == value.id ?
+                            <input type="text" className='box' value={value.age}/>
+                            :
+                            <span>{value.age}</span>
+                        }
+                      </td>
+                      <td className='outline'>
+                        <button onClick={() => EditStudentProfile(value)}>Edit</button>
+                        <button onClick={() => discardEditProfile()}>Discard</button>
+                      </td>
+                    </tr>
+                  )
+                })
+              }
+          </tbody>
+        </table>
       </div>
     </div>
   );
