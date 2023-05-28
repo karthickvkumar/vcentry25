@@ -49,3 +49,21 @@ flush privileges;
 -- 2X - 200, 201, 203 (Success response)
 -- 4X - 400, 401, 404 (Client Side error)
 -- 5X - 500, 501, 502 (Server Side error)
+
+
+=====================================
+
+use learning_nodejs;
+
+create table studentList (firstName varchar(255), lastName varchar(255), age int, id int not null auto_increment, primary key(id));
+
+===================================
+use learning_nodejs;
+
+insert into studentList (firstName, lastName, age) values ('Karthick', 'Kumar', 29);
+
+=========================
+
+use learning_nodejs;
+
+update studentList set firstName='ABC' where id=1;

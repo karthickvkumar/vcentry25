@@ -62,7 +62,45 @@ app.post("/addusers", (request, response) => {
     }
   })
 })
+// http://localhost:4000/create/student
+app.post("/create/student", (request, response) => {
+  const studentForm = request.body;
+  
+  const studentAge = parseInt(studentForm.age);
 
+  const sqlQuery = `insert into studentList (firstName, lastName, age) values ('${studentForm.firstName}', '${studentForm.lastName}', ${studentAge})`;
+
+  connection.query(sqlQuery, (error, result) => {
+    if(error){
+      response.status(500).send({
+        message : "Some things pls went wrong pls try again later",
+        error : error
+      })
+    }
+    else{
+      response.status(200).send({
+        message : "Student profile has been created successfully"
+      })
+    }
+  })
+})
+
+//  http://localhost:4000/list/student
+app.get("/list/student", (request, response) => {
+  const sqlQuery = `select * from studentList`;
+
+  connection.query(sqlQuery, (error, result) => {
+    if(error){
+      response.status(500).send({
+        message : "Some things pls went wrong pls try again later",
+        error : error
+      })
+    }
+    else{
+      response.status(200).send(result);
+    }
+  })
+})
 
 const portNumber = 4000;
 server.listen(portNumber, () => {
