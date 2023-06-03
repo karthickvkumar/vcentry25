@@ -125,6 +125,28 @@ app.put("/edit/student/:id", (request, response) => {
   })
 })
 
+// http://localhost:4000/delete/student/1
+
+app.delete("/delete/student/:id", (request, response) => {
+  const uniqueId = request.params.id;
+
+  const sqlQuery = `delete from studentList where id = ${uniqueId}`;
+
+  connection.query(sqlQuery, (error, result) => {
+    if(error){
+      response.status(500).send({
+        message : "Some things pls went wrong pls try again later",
+        error : error
+      })
+    }
+    else{
+      response.status(200).send({
+        message : "Student profile has been deleted successfully"
+      })
+    }
+  })
+})
+
 const portNumber = 4000;
 server.listen(portNumber, () => {
   console.log("Node JS server is running on port 4000");

@@ -55,6 +55,21 @@ const StudentListPage = () => {
       })
   }
 
+  const deleteStudentProfile = (value) => {
+    const url = "http://localhost:4000/delete/student/" + value.id;
+
+    axios.delete(url)
+      .then((response) => {
+        const result = response.data;
+        updateSelectedStudentID(null);
+        listStudentProfile();
+        alert(result.message);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+
   return (
     <div>
       <button onClick={() => listStudentProfile() }>Load Student Profile</button>
@@ -107,8 +122,9 @@ const StudentListPage = () => {
                           <button onClick={() => updateStudentProfile()}>Upate</button>
                           :
                           <button onClick={() => EditStudentProfile(value)}>Edit</button>
-
                         }
+
+                        <button onClick={() => deleteStudentProfile(value)}>Delete</button>
                         
                       </td>
                     </tr>
