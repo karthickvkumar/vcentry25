@@ -15,6 +15,8 @@ import PrivacySceeen from "./screens/privacy";
 
 import PageNotFoundScreen from "./screens/page-not-found";
 
+import Student from "./screens/student";
+import StudentCreatePage from "./screens/student-create";
 import StudentList from "./screens/student-list";
 
 import "./css/style.css";
@@ -36,7 +38,10 @@ const App = () => {
           <Route path="privacy" element={<PrivacySceeen></PrivacySceeen>}></Route>
         </Route>
 
-        <Route path="students" element={<StudentList></StudentList>}></Route>
+        <Route path="students" element={<Student></Student>}>
+          <Route path="create" element={<StudentCreatePage></StudentCreatePage>}></Route>
+          <Route path="list" element={<StudentList></StudentList>}></Route>
+        </Route>
 
         <Route path="*" element={<PageNotFoundScreen></PageNotFoundScreen>}></Route>
       </Routes>

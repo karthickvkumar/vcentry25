@@ -142,3 +142,22 @@ body{
 .box{
   width: 100px;
 }
+
+.student-container{
+  border: 2px solid;
+  display: flex;
+  flex-direction: row;
+  height: 85vh;
+}
+
+.student-page-link{
+  border: 2px solid;
+  width: 125px;
+  height: 100%;
+}
+
+.student-content{
+  border: 2px solid;
+  height: 100%;
+  width: 100%;
+}

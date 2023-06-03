@@ -49,7 +49,12 @@ flush privileges;
 -- 2X - 200, 201, 203 (Success response)
 -- 4X - 400, 401, 404 (Client Side error)
 -- 5X - 500, 501, 502 (Server Side error)
+show databases;
 
+=========================================
+use learning_nodejs;
+
+show tables;
 
 =====================================
 

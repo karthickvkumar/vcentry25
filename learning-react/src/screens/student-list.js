@@ -1,36 +1,16 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from "axios";
 
-const StudentList = () => {
+const StudentListPage = () => {
+  const [studentListData, updateStudentListData] = useState([]); // API array store
 
-  const [studentForm, UpdateStudentForm] = useState({
-    firstName : "",
-    lastName : "",
-    age : ""
-  });
+  const [selectedStudentID, updateSelectedStudentID] = useState(null); // Edit -> User ID store
 
-  const [studentListData, updateStudentListData] = useState([]);
+  const [editStudent, updateEditStudent] = useState({}); // Edit -> User Infomration store
 
-  const [selectedStudentID, updateSelectedStudentID] = useState(null);
-
-  const onHandleInput = (event) => {
-    UpdateStudentForm({...studentForm, [event.target.name] : event.target.value });
-  }
-
-  const submitStudentProfile = () => {
-    console.log(studentForm);
-
-    const url = "http://localhost:4000/create/student";
-
-    axios.post(url, studentForm)
-      .then((response) => {
-        const result = response.data;
-        alert(result.message);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-  }
+  useEffect(() => {
+    listStudentProfile();
+  }, []);
 
   const listStudentProfile = () => {
     const url = "http://localhost:4000/list/student";
@@ -52,24 +32,24 @@ const StudentList = () => {
   const EditStudentProfile = (value) => {
     console.log(value);
     updateSelectedStudentID(value.id);
+
+    updateEditStudent(value);
+  }
+
+  const onInputEdit = (event) => {
+    console.log(event.target.value)
+
+    updateEditStudent({...editStudent, [event.target.name] : event.target.value});
+    
+  }
+
+  const updateStudentProfile = () => {
+    console.log(editStudent);
   }
 
   return (
     <div>
-      <h2>Student List Page</h2>
-      <div>
-        <label>Enter your First Name :</label>
-        <input type='text' placeholder='Enter First Name' onChange={onHandleInput} name='firstName' />
-        <br></br>
-        <label>Enter your Last Name :</label>
-        <input type='text' placeholder='Enter Last Name' onChange={onHandleInput} name='lastName'/>
-        <br></br>
-        <label>Enter your Age :</label>
-        <input type='text' placeholder='Enter Age' onChange={onHandleInput} name='age'/>
-        <br></br>
-        <button onClick={() => submitStudentProfile() }>Submit Student Profile</button>
-        
-        <button onClick={() => listStudentProfile() }>Load Student Profile</button>
+      <button onClick={() => listStudentProfile() }>Load Student Profile</button>
         <table className='outline'>
           <thead>
             <tr>
@@ -88,7 +68,7 @@ const StudentList = () => {
                        
                        {
                         selectedStudentID == value.id ?
-                          <input type="text" className='box' value={value.firstName} />
+                          <input type="text" className='box' value={editStudent.firstName} onChange={onInputEdit} name='firstName' />
                           :
                           <span>{value.firstName}</span>
                        }
@@ -98,7 +78,7 @@ const StudentList = () => {
                         
                       {
                         selectedStudentID == value.id ?
-                          <input type="text" className='box' value={value.lastName} />
+                          <input type="text" className='box' value={editStudent.lastName} onChange={onInputEdit}  name='lastName' />
                           :
                           <span>{value.lastName}</span>
                        }
@@ -108,14 +88,15 @@ const StudentList = () => {
                         
                         {
                           selectedStudentID == value.id ?
-                            <input type="text" className='box' value={value.age}/>
+                            <input type="text" className='box' value={editStudent.age} onChange={onInputEdit} name='age' />
                             :
                             <span>{value.age}</span>
                         }
                       </td>
                       <td className='outline'>
                         <button onClick={() => EditStudentProfile(value)}>Edit</button>
-                        <button onClick={() => discardEditProfile()}>Discard</button>
+                        {/* <button onClick={() => discardEditProfile()}>Discard</button> */}
+                        <button onClick={() => updateStudentProfile()}>Upate</button>
                       </td>
                     </tr>
                   )
@@ -123,9 +104,8 @@ const StudentList = () => {
               }
           </tbody>
         </table>
-      </div>
     </div>
   );
 };
 
-export default StudentList;
+export default StudentListPage;
