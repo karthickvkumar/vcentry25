@@ -25,10 +25,6 @@ const StudentListPage = () => {
       })
   }
 
-  const discardEditProfile = () => {
-    updateSelectedStudentID(null);
-  }
-
   const EditStudentProfile = (value) => {
     console.log(value);
     updateSelectedStudentID(value.id);
@@ -45,6 +41,18 @@ const StudentListPage = () => {
 
   const updateStudentProfile = () => {
     console.log(editStudent);
+    const url = "http://localhost:4000/edit/student/" + editStudent.id;
+
+    axios.put(url, editStudent)
+      .then((resposne) => {
+        const result = resposne.data;
+        updateSelectedStudentID(null);
+        listStudentProfile();
+        alert(result.message);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }
 
   return (
@@ -94,9 +102,14 @@ const StudentListPage = () => {
                         }
                       </td>
                       <td className='outline'>
-                        <button onClick={() => EditStudentProfile(value)}>Edit</button>
-                        {/* <button onClick={() => discardEditProfile()}>Discard</button> */}
-                        <button onClick={() => updateStudentProfile()}>Upate</button>
+                        {
+                          selectedStudentID == value.id ?
+                          <button onClick={() => updateStudentProfile()}>Upate</button>
+                          :
+                          <button onClick={() => EditStudentProfile(value)}>Edit</button>
+
+                        }
+                        
                       </td>
                     </tr>
                   )

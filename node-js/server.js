@@ -102,6 +102,29 @@ app.get("/list/student", (request, response) => {
   })
 })
 
+// http://localhost:4000/edit/student/2
+app.put("/edit/student/:id", (request, response) => {
+  const uniqueId = request.params.id;
+  const data = request.body;
+  const age = parseInt(data.age);
+
+  const sqlQuery = `update studentList set firstName='${data.firstName}', lastName='${data.lastName}', age=${age} where id = ${uniqueId}`;
+
+  connection.query(sqlQuery, (error, result) => {
+    if(error){
+      response.status(500).send({
+        message : "Some things pls went wrong pls try again later",
+        error : error
+      })
+    }
+    else{
+      response.status(200).send({
+        message : "Student profile has been updated successfully"
+      })
+    }
+  })
+})
+
 const portNumber = 4000;
 server.listen(portNumber, () => {
   console.log("Node JS server is running on port 4000");
