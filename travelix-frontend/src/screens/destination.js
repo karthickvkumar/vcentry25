@@ -64,6 +64,7 @@ const DestinationScreen = () => {
               })
 
             }
+            { context.sharedData.length == 0 && <h2>No Destination Available</h2>}
           
           </div>
         </div>

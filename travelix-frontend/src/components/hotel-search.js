@@ -20,7 +20,7 @@ const HotelSearchComponent = () => {
             <label for="#">Check-in date</label>
             <div className="form-field">
               <div className="icon"><span className="fa fa-calendar"></span></div>
-              <input type="text" className="form-control checkin_date" placeholder="Check In Date" />
+              <input type="date" className="form-control checkin_date" placeholder="Check In Date" />
             </div>
           </div>
         </div>
@@ -29,7 +29,7 @@ const HotelSearchComponent = () => {
             <label for="#">Check-out date</label>
             <div className="form-field">
               <div className="icon"><span className="fa fa-calendar"></span></div>
-              <input type="text" className="form-control checkout_date" placeholder="Check Out Date" />
+              <input type="date" className="form-control checkout_date" placeholder="Check Out Date" />
             </div>
           </div>
         </div>

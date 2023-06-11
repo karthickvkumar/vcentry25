@@ -7,6 +7,7 @@ import DestinationScreen from "./screens/destination";
 import HotelsScreen from "./screens/hotels";
 import ContactScreen from "./screens/contact";
 import AdminDestinationScreens from "./screens/admin-destination";
+import AdminHotelScreen from "./screens/admin-hotel";
 
 import DataSharingContext from "./context/data-sharing-context";
 
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="contact" element={<ContactScreen></ContactScreen>}></Route>
           
           <Route path="admin/destination" element={<AdminDestinationScreens></AdminDestinationScreens>}></Route>
+          <Route path="admin/hotel" element={<AdminHotelScreen></AdminHotelScreen>}></Route>
         </Routes>
       </BrowserRouter>
     </DataSharingContext.Provider>
