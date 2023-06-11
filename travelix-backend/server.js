@@ -50,7 +50,19 @@ app.post("/add/destination", (request, response) => {
 
 // http://localhost:4000/list/destination
 app.get("/list/destination", (request,  response) => {
-  const sqlQuery = `select * from destinationList`;
+
+  const destinationName = request.query.destinationName;
+
+  let sqlQuery = "";
+
+  if(destinationName == undefined){
+     sqlQuery = `select * from destinationList`;
+  }
+  else{
+    sqlQuery = `select * from destinationList where destinationName='${destinationName}'`;
+  }
+
+  console.log(sqlQuery)
 
   connection.query(sqlQuery, (error, result) => {
     if(error){

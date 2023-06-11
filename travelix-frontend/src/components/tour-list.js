@@ -1,16 +1,16 @@
 import React from 'react';
 
-const TourListComponent = () => {
+const TourListComponent = (props) => {
   return (
     <div class="col-md-4 m-btm-40">
       <div class="item">
         <div class="project-destination">
           <a href="#" class="img" style={{
-    "backgroundImage": `url(${require('../images/place-1.jpg')})`
+    "backgroundImage": `url(${props.destinationImage})`
   }}>
             <div class="text">
-              <h3>Philippines</h3>
-              <span>8 Tours</span>
+              <h3>{props.destinationName}</h3>
+              <span>{props.destinationCount} Tours</span>
             </div>
           </a>
         </div>

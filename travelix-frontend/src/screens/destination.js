@@ -1,11 +1,16 @@
-import React from "react";
+import React, {useContext} from "react";
+import axios from "axios";
 
 import HeaderComponent from "../components/header";
 import FooterComponent from "../components/footer";
 import TourListComponent from "../components/tour-list";
 import DestinationSearchComponent from "../components/destinationsearch";
+import DataSharingContext from "../context/data-sharing-context";
 
 const DestinationScreen = () => {
+
+  const context = useContext(DataSharingContext);
+
   return (
     <div>
       <HeaderComponent></HeaderComponent>
@@ -51,12 +56,15 @@ const DestinationScreen = () => {
       <section class="ftco-section">
         <div class="container">
           <div class="row">
-            <TourListComponent></TourListComponent>
-            <TourListComponent></TourListComponent>
-            <TourListComponent></TourListComponent>
-            <TourListComponent></TourListComponent>
-            <TourListComponent></TourListComponent>
-            <TourListComponent></TourListComponent>
+            {
+              context.sharedData.map((value,index) => {
+                return(
+                  <TourListComponent {...value} key={index}></TourListComponent>
+                )
+              })
+
+            }
+          
           </div>
         </div>
       </section>
