@@ -1,11 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
 
 import HeaderComponent from "../components/header";
 import FooterComponent from "../components/footer";
 import HotelListComponent from "../components/hotel-list";
 import HotelSearchComponent from "../components/hotel-search";
 
+import DataSharingContext from "../context/data-sharing-context";
+
 const HotelsScreen = () => {
+
+  const context = useContext(DataSharingContext);
+  console.log(context.sharedData);
+
   return (
     <div>
       <HeaderComponent></HeaderComponent>
@@ -51,12 +57,17 @@ const HotelsScreen = () => {
       <section class="ftco-section">
         <div class="container">
           <div class="row">
-            <HotelListComponent></HotelListComponent>
-            <HotelListComponent></HotelListComponent>
-            <HotelListComponent></HotelListComponent>
-            <HotelListComponent></HotelListComponent>
-            <HotelListComponent></HotelListComponent>
-            <HotelListComponent></HotelListComponent>
+            {
+              context.sharedData.map((value, index) => {
+                return(
+                  <HotelListComponent {...value} key={index}></HotelListComponent>
+                )
+              })
+            }
+
+            {
+              context.sharedData.length == 0 && <h2>Hotels not available</h2>
+            }
           </div>
         </div>
       </section>

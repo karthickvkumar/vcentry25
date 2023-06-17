@@ -18,7 +18,7 @@ const DestinationSearchComponent = () => {
   const SearchDestination = () => {
     console.log(searchForm);
 
-    const url = `http://localhost:4000/list/destination?destinationName=${searchForm.destinationName}`;
+    const url = `https://travalix-backend-24.onrender.com/list/destination?destinationName=${searchForm.destinationName}`;
 
     axios.get(url)
       .then((response) => {

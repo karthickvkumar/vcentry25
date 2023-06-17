@@ -33,7 +33,7 @@ const AdminDestinationScreens = () => {
   const submitDestination = () => {
     console.log(destinationForm);
 
-    const url = "http://localhost:4000/add/destination";
+    const url = "https://travalix-backend-24.onrender.com/add/destination";
     axios.post(url, destinationForm)
       .then((response) => {
         const result = response.data;
@@ -46,7 +46,7 @@ const AdminDestinationScreens = () => {
   }
 
   const listAllDestination = () => {
-    const url = "http://localhost:4000/list/destination";
+    const url = "https://travalix-backend-24.onrender.com/list/destination";
 
     axios.get(url)
       .then((response) => {
@@ -59,7 +59,7 @@ const AdminDestinationScreens = () => {
   }
 
   const deleteDestination = (value) => {
-    const url = "http://localhost:4000/delete/destination/" + value.id;
+    const url = "https://travalix-backend-24.onrender.com/delete/destination/" + value.id;
 
     axios.delete(url)
       .then((response) => {

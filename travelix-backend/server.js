@@ -14,11 +14,18 @@ app.use(cors({
 
 app.use(express.json({ limit : "50mb"}));
 
+// const connection = mysql.createConnection({
+//   host : "localhost",
+//   user: "root",
+//   password : "Test@123",
+//   database : "travelix",
+//   port : 3306
+// });
 const connection = mysql.createConnection({
-  host : "localhost",
-  user: "root",
-  password : "Test@123",
-  database : "travelix",
+  host : "db4free.net",
+  user: "vcentry24",
+  password : "karthick",
+  database : "travelixvcentry",
   port : 3306
 });
 
@@ -113,15 +120,15 @@ app.post("/add/hotel", (request, response) => {
 // http://localhost:4000/list/hotel
 app.get("/list/hotel", (request,  response) => {
 
-  const hotelName = request.query.hotelName;
+  const hotelLocation = request.query.hotelLocation;
 
   let sqlQuery = "";
 
-  if(hotelName == undefined){
+  if(hotelLocation == undefined){
      sqlQuery = `select * from hotelList`;
   }
   else{
-    sqlQuery = `select * from hotelList where destinationName='${destinationName}'`;
+    sqlQuery = `select * from hotelList where hotelLocation='${hotelLocation}'`;
   }
 
   console.log(sqlQuery)

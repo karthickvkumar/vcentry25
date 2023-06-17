@@ -33,7 +33,7 @@ const AdminHotelScreen = () => {
 
   const submitHotel = () => {
     console.log(hotelForm);
-    const url = "http://localhost:4000/add/hotel";
+    const url = "https://travalix-backend-24.onrender.com/add/hotel";
 
     axios.post(url, hotelForm)
       .then((response) => {
@@ -48,7 +48,7 @@ const AdminHotelScreen = () => {
 
   
   const listAllHotels = () => {
-    const url = "http://localhost:4000/list/hotel";
+    const url = "https://travalix-backend-24.onrender.com/list/hotel";
 
     axios.get(url)
       .then((response) => {
@@ -61,7 +61,7 @@ const AdminHotelScreen = () => {
   }
 
   const deleteHotel = (value) => {
-    const url = "http://localhost:4000/delete/hotel/" + value.id;
+    const url = "https://travalix-backend-24.onrender.com/delete/hotel/" + value.id;
 
     axios.delete(url)
       .then((response) => {
