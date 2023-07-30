@@ -32,6 +32,7 @@ const App = () => {
 
         <Route path="contact-us" element={<ContactScreen></ContactScreen>}></Route>
         <Route path="about" element={<AboutScreen></AboutScreen>}></Route>
+       
         <Route path="settings" element={<SettingsScreen></SettingsScreen>}>
           <Route path="activity" element={<ActivityScreen></ActivityScreen>}></Route>
           <Route path="profile" element={<ProfileInformationScreen></ProfileInformationScreen>}></Route>

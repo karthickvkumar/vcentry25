@@ -10,6 +10,8 @@ const StudentCreatePage = () => {
   });
 
   const onHandleInput = (event) => {
+    //studentForm.firstName = "asdsad";
+
     UpdateStudentForm({...studentForm, [event.target.name] : event.target.value });
   }
 
